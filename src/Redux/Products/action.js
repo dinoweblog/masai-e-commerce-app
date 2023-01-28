@@ -15,13 +15,12 @@ export const getProductsError = () => ({
   type: PRODUCTS_ERROR,
 });
 
-export const getProductsData = (page, size) => (dispatch) => {
+export const getProductsData = (categoryName) => (dispatch) => {
   dispatch(getProductsLoading());
-  fetch(
-    `https://emart-server.herokuapp.com/products/women?page=${page}&size=${size}`
-  )
+  fetch(`https://dummyjson.com/products/category/${categoryName}`)
     .then((res) => res.json())
     .then((res) => {
+      console.log(res);
       dispatch(getProductsSuccess(res));
     })
     .catch((error) => dispatch(getProductsError()));

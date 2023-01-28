@@ -4,7 +4,6 @@ const initialState = {
   loading: false,
   error: false,
   products: [],
-  totalPages: 0,
 };
 
 export const productsReducer = (store = initialState, { type, payload }) => {
@@ -18,7 +17,6 @@ export const productsReducer = (store = initialState, { type, payload }) => {
         loading: false,
         error: false,
         products: [...payload.products],
-        totalPages: payload.totalPages,
       };
 
     case PRODUCTS_ERROR:

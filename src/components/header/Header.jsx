@@ -8,7 +8,7 @@ export const Header = () => {
         <li>
           <Link to="/">Navbar</Link>
         </li>
-        <li style={{ position: "relative" }}>
+        <li>
           <Link to="/search">Search</Link>
         </li>
       </ul>
