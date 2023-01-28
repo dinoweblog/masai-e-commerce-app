@@ -1,0 +1,17 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+
+.cate-card {
+  position: relative;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 8px;
+  margin-top: 45px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+}

@@ -1,0 +1,42 @@
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getSearchProductsData } from "../../Redux/Search/action";
+import { Card } from "../Card";
+import "./style.css";
+
+export const SearchPage = () => {
+  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
+  const { search_products, loading } = useSelector(
+    (state) => state.searchProducts
+  );
+  useEffect(() => {
+    dispatch(getSearchProductsData(input));
+  }, []);
+
+  const getInput = (event) => {
+    setInput(event.target.value);
+  };
+
+  const getSearchData = () => {
+    dispatch(getSearchProductsData(input));
+  };
+
+  console.log(search_products);
+
+  if (loading) return <p>Loading...</p>;
+
+  return (
+    <div>
+      <div>
+        <input type="text" value={input} onChange={getInput} />
+        <button onClick={getSearchData}>Search</button>
+      </div>
+      <div className="search-container">
+        {search_products.map((item) => (
+          <Card item={item} />
+        ))}
+      </div>
+    </div>
+  );
+};
