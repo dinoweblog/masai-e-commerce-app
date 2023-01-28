@@ -31,4 +31,8 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .search-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -12,4 +12,8 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .product-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
