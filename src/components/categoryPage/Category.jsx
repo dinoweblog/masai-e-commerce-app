@@ -14,6 +14,7 @@ export const Category = () => {
 
   const redirectProductPage = (item) => {
     localStorage.setItem("category", JSON.stringify(item));
+    navigate("/products");
   };
 
   if (loading) return <p>Loading...</p>;

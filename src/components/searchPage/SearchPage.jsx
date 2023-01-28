@@ -10,9 +10,6 @@ export const SearchPage = () => {
   const { search_products, loading } = useSelector(
     (state) => state.searchProducts
   );
-  useEffect(() => {
-    dispatch(getSearchProductsData(input));
-  }, []);
 
   const getInput = (event) => {
     setInput(event.target.value);
@@ -22,21 +19,26 @@ export const SearchPage = () => {
     dispatch(getSearchProductsData(input));
   };
 
-  console.log(search_products);
-
   if (loading) return <p>Loading...</p>;
 
   return (
     <div>
-      <div>
+      <div className="input-box">
         <input type="text" value={input} onChange={getInput} />
         <button onClick={getSearchData}>Search</button>
       </div>
-      <div className="search-container">
-        {search_products.map((item) => (
-          <Card item={item} />
-        ))}
-      </div>
+      {input === "" && <p></p>}
+      {input !== "" && search_products.length === 0 && (
+        <h2 style={{ textAlign: "center" }}>Oops! No Result available</h2>
+      )}
+
+      {input !== "" && search_products.length !== 0 && (
+        <div className="search-container">
+          {search_products.map((item) => (
+            <Card item={item} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

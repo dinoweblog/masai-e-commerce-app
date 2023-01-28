@@ -8,6 +8,7 @@ export const AppLayout = () => {
         bgcolor: "#ECECEC",
         width: "80%",
         margin: "auto",
+        marginBottom: "60px",
       }}
     >
       <Header />

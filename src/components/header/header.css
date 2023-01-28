@@ -1,19 +1,22 @@
 .header {
   display: flex;
-  justify-content: flex-end;
-  gap: 20px;
+  justify-content: space-between;
   list-style: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(126, 126, 126);
   padding: 10px;
 }
 
 .header a {
   text-decoration: none;
   font-size: 20px;
-  color: black;
+  color: rgb(142, 5, 160);
 }
 
 .header li:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.navbar a {
+  font-size: 24px;
 }

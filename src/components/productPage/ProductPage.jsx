@@ -9,15 +9,20 @@ export const ProductPage = () => {
   const dispatch = useDispatch();
   const { products, loading } = useSelector((state) => state.products);
   useEffect(() => {
-    dispatch(getProductsData());
+    const categoryValue = JSON.parse(localStorage.getItem("category")) || "";
+    dispatch(getProductsData(categoryValue));
   }, []);
 
   if (loading) return <p>Loading...</p>;
+
+  console.log(products);
   return (
     <div>
-      <Category />
-      <h2 style={{ marginTop: "30px" }}>Home</h2>
-      <div className="container"></div>
+      <div className="product-container">
+        {products.map((item) => (
+          <Card item={item} />
+        ))}
+      </div>
     </div>
   );
 };

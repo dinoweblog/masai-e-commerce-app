@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <nav>
       <ul className="header">
-        <li>
+        <li className="navbar">
           <Link to="/">Navbar</Link>
         </li>
         <li>

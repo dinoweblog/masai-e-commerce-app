@@ -4,7 +4,7 @@ export const Card = ({ item }) => {
       <img src={item.thumbnail} alt={item.title} />
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <p>Price: {item.price}</p>
+      <p>Price: ${item.price}</p>
     </div>
   );
 };
